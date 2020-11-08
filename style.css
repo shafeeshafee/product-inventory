@@ -1,0 +1,9 @@
+.list-desc {
+	padding: 1em;
+}
+
+.bg-dark,
+.bg-primary,
+.bg-danger {
+	margin-right: 2em;
+}
