@@ -21,69 +21,70 @@
 				<p class="lead">Enter items into our product inventory</p>
 			</div>
 		</div>
-
-		<!-- inputs display -->
-		<div class="container">
-			<div class="row">
-				<div class="col-sm">
-					<div class="input-group mb-3">
-						<input
-							id="product-name"
-							type="text"
-							class="form-control"
-							placeholder="Product name"
-							aria-label="Product name"
-							aria-describedby="button-addon2"
-						/>
+		<div class="contain">
+			<!-- inputs display -->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm">
+						<div class="input-group mb-3">
+							<input
+								id="product-name"
+								type="text"
+								class="form-control"
+								placeholder="Product name"
+								aria-label="Product name"
+								aria-describedby="button-addon2"
+							/>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="input-group mb-3">
+							<input
+								id="quantity-of-items"
+								type="text"
+								class="form-control"
+								placeholder="Quantity"
+								aria-label="Quantity"
+								aria-describedby="button-addon2"
+							/>
+						</div>
+					</div>
+					<div class="col-sm">
+						<div class="input-group mb-3">
+							<input
+								id="item-price"
+								type="text"
+								class="form-control"
+								placeholder="Price"
+								aria-label="Price"
+								aria-describedby="button-addon2"
+							/>
+						</div>
 					</div>
 				</div>
-				<div class="col-sm">
-					<div class="input-group mb-3">
-						<input
-							id="quantity-of-items"
-							type="text"
-							class="form-control"
-							placeholder="Quantity"
-							aria-label="Quantity"
-							aria-describedby="button-addon2"
-						/>
+
+				<!-- button display -->
+				<div id="add-item" class="d-flex justify-content-center">
+					<button type="button" class="btn btn-primary">Enter Item</button>
+				</div>
+			</div>
+			<hr />
+
+			<!-- list of items display -->
+			<div class="container">
+				<div class="row">
+					<div class="col">
+						<ul class="list-parent list-group"></ul>
 					</div>
 				</div>
-				<div class="col-sm">
-					<div class="input-group mb-3">
-						<input
-							id="item-price"
-							type="text"
-							class="form-control"
-							placeholder="Price"
-							aria-label="Price"
-							aria-describedby="button-addon2"
-						/>
-					</div>
-				</div>
-			</div>
 
-			<!-- button display -->
-			<div id="add-item" class="d-flex justify-content-center">
-				<button type="button" class="btn btn-primary">Enter Item</button>
-			</div>
-		</div>
-		<hr />
-
-		<!-- list of items display -->
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<ul class="list-parent list-group"></ul>
-				</div>
-			</div>
-
-			<!-- total display -->
-			<div class="d-flex justify-content-end">
-				<div class="card w-25 p-3">
-					<div class="card-body">
-						<h5 class="card-title">Inventory Budget</h5>
-						<p id="display-total" class="card-text user-select-all">$0.00</p>
+				<!-- total display -->
+				<div class="d-flex justify-content-end">
+					<div class="card w-25 p-3">
+						<div class="card-body">
+							<h5 class="card-title">Inventory Budget</h5>
+							<p id="display-total" class="card-text user-select-all">$0.00</p>
+						</div>
 					</div>
 				</div>
 			</div>

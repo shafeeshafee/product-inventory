@@ -1,3 +1,44 @@
+body {
+	background: url(img/warehouse.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+body > div.jumbotron.jumbotron-fluid {
+	background-color: black;
+	color: white;
+}
+
+.contain {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 80%;
+	padding: 2em;
+	background: white;
+}
+
+body > div.contain > div:nth-child(3) > div.d-flex.justify-content-end > div {
+	margin-top: 2em;
+}
+
+body > div.contain > div:nth-child(3) > div.d-flex.justify-content-end > div > div {
+	padding: 0;
+}
+
+hr {
+	border: 0;
+	clear: both;
+	display: block;
+	width: 20%;
+	background-color: #ff00003a;
+	height: 1px;
+}
+
 .list-desc {
 	padding: 1em;
 }

@@ -50,6 +50,10 @@ let accumalator = [];
 
 // enter item on click
 enterItemButton.addEventListener('click', () => {
+    enterProduct();
+});
+
+function enterProduct() {
     let productValue = product.value;
     let quantityValue = Number(quantity.value);
     let priceValue = Number(price.value);
@@ -94,4 +98,4 @@ enterItemButton.addEventListener('click', () => {
     } else {
         total.innerText = `0.00`;
     }
-});
+}
