@@ -72,7 +72,7 @@ function enterProduct() {
         quantity.classList.remove('reddened');
         price.classList.remove('reddened');
         // push into accumalator
-        accumalator.push(Number(price.value) * (Number(quantity.value)));
+        accumalator.push(Number(price.value) * Math.round((Number(quantity.value))));
         // new product
         let newProduct = new Product(productValue, quantityValue, priceValue);
         // create a li node
