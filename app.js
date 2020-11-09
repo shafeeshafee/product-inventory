@@ -20,9 +20,6 @@ class Product {
         return quantity;
     }
     addItem() {
-
-        const { name, price, quantity } = this;
-
         return `
         <div class="container">
             <div class="row">
@@ -46,12 +43,19 @@ const quantity = document.querySelector('#quantity-of-items');
 const price = document.querySelector('#item-price');
 
 // total: display-total
-const total = document.querySelector('#total');
+const total = document.querySelector('#display-total');
+
+// item accumalator
+let accumalator = [];
 
 // enter item on click
 enterItemButton.addEventListener('click', () => {
     if (product.value && quantity.value && price.value) {
-        let productValue = product.value; let quantityValue = quantity.value; let priceValue = price.value;
+        let productValue = product.value;
+        let quantityValue = parseInt(quantity.value);
+        let priceValue = parseInt(price.value);
+        // push into accumalator
+        accumalator.push(Number(price.value));
         // new product
         let newProduct = new Product(productValue, quantityValue, priceValue);
         // create a li node
@@ -64,4 +68,9 @@ enterItemButton.addEventListener('click', () => {
         alert('Enter all product input fields');
     }
     product.value = '', quantity.value = '', price.value = '';
+
+    let totalPrice = accumalator.reduce((acc, val) => acc + val);
+
+    total.innerText = `$${totalPrice.toFixed(2)}`;
 });
+
