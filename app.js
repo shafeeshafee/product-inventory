@@ -1,8 +1,8 @@
 class Product {
-    constructor(name, price, quantity) {
+    constructor(name, quantity, price) {
         this.name = name;
-        this.price = price;
         this.quantity = quantity;
+        this.price = price;
     }
 
     productName() {
@@ -17,15 +17,15 @@ class Product {
 
     amount() {
         const { quantity } = this;
-        return quantity;
+        return Math.round(quantity);
     }
     addItem() {
         return `
         <div class="container">
             <div class="row">
                 <div class="list-desc col-sm"><span class="p-3 mb-2 bg-dark text-white">Item</span>${this.productName()}</div>
-                <div class="list-desc col-sm"><span class="p-3 mb-2 bg-danger text-white">Price</span>${this.cost()}</div>
                 <div class="list-desc col-sm"><span class="p-3 mb-2 bg-primary text-white">Quantity</span>${this.amount()}</div>
+                <div class="list-desc col-sm"><span class="p-3 mb-2 bg-danger text-white">Price</span>${this.cost()}</div>
             </div>
         </div>`;
     }
