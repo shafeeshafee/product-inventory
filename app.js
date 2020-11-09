@@ -77,6 +77,7 @@ enterItemButton.addEventListener('click', () => {
         newLi.innerHTML = newProduct.addItem();
         //append it
         list.append(newLi);
+        product.value = '', quantity.value = '', price.value = '';
     }
     // if no input at all
     else {
@@ -84,7 +85,6 @@ enterItemButton.addEventListener('click', () => {
         quantity.classList.add('reddened');
         price.classList.add('reddened');
     }
-    product.value = '', quantity.value = '', price.value = '';
 
     let totalPrice = accumalator.reduce((acc, val) => acc + val);
 
