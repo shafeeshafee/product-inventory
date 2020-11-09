@@ -50,10 +50,23 @@ let accumalator = [];
 
 // enter item on click
 enterItemButton.addEventListener('click', () => {
-    if (product.value && quantity.value && price.value) {
-        let productValue = product.value;
-        let quantityValue = parseInt(quantity.value);
-        let priceValue = parseInt(price.value);
+    let productValue = product.value;
+    let quantityValue = Number(quantity.value);
+    let priceValue = Number(price.value);
+
+    // if price or quantity are not numbers
+    if (isNaN(quantityValue) || isNaN(priceValue)) {
+        alert('Only numerical values please!');
+        quantity.value = '', price.value = '';
+        quantity.classList.add('reddened');
+        price.classList.add('reddened');
+        return;
+    }
+    // if everything is good
+    else if (product.value && quantity.value && price.value) {
+        product.classList.remove('reddened');
+        quantity.classList.remove('reddened');
+        price.classList.remove('reddened');
         // push into accumalator
         accumalator.push(Number(price.value));
         // new product
@@ -64,13 +77,21 @@ enterItemButton.addEventListener('click', () => {
         newLi.innerHTML = newProduct.addItem();
         //append it
         list.append(newLi);
-    } else {
-        alert('Enter all product input fields');
+    }
+    // if no input at all
+    else {
+        product.classList.add('reddened');
+        quantity.classList.add('reddened');
+        price.classList.add('reddened');
     }
     product.value = '', quantity.value = '', price.value = '';
 
     let totalPrice = accumalator.reduce((acc, val) => acc + val);
 
-    total.innerText = `$${totalPrice.toFixed(2)}`;
+    // add all items
+    if (accumalator !== []) {
+        total.innerText = `$${totalPrice.toFixed(2)}`;
+    } else {
+        total.innerText = `0.00`;
+    }
 });
-

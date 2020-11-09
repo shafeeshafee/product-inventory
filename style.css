@@ -7,3 +7,7 @@
 .bg-danger {
 	margin-right: 2em;
 }
+
+.reddened {
+	border: 1px solid red !important;
+}
