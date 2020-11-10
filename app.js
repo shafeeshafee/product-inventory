@@ -56,6 +56,14 @@ enterItemButton.addEventListener('click', () => {
     enterProduct();
 });
 
+for (let input of allInputs) {
+    input.addEventListener('keypress', (e) => {
+        if (e.keyCode === 13) {
+            enterProduct();
+        }
+    });
+}
+
 function enterProduct() {
     let productValue = product.value;
     let quantityValue = Number(quantity.value);
@@ -72,7 +80,7 @@ function enterProduct() {
     // if everything is good
     else if (product.value && quantity.value && price.value) {
         // remove red borders
-        for (input of allInputs) {
+        for (let input of allInputs) {
             input.classList.remove('reddened');
         }
         // push into accumalator
@@ -93,7 +101,7 @@ function enterProduct() {
     // if no input at all
     else {
         // toggle red borders
-        for (input of allInputs) {
+        for (let input of allInputs) {
             input.classList.add('reddened');
         }
     }
