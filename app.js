@@ -20,7 +20,7 @@ class Product {
         return Math.round(quantity);
     }
     addItem() {
-        let randomNumber = Math.round(Math.random() * 10_000);
+        let randomNumber = Math.floor(Math.random() * 10_000);
         return `
         <div class="container">
             <div class="row">
