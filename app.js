@@ -1,4 +1,3 @@
-
 class Product {
     constructor(name, quantity, price) {
         this.name = name;
@@ -97,7 +96,7 @@ function enterProduct() {
 
     let totalPrice = accumalator.reduce((acc, val) => acc + val);
 
-    // add all items
+    // display sum of all items
     if (accumalator !== []) {
         total.innerText = `$${totalPrice.toFixed(2)}`;
     } else {
