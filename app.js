@@ -84,7 +84,6 @@ function enterProduct() {
             input.classList.remove('reddened');
         }
         // push into accumalator
-        // * Math.round((Number(quantity.value)))
         for (let i = 0; i < Number(quantity.value); i++) {
             accumalator.push(Number(price.value));
         }
