@@ -1,4 +1,3 @@
-const reg = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
 
 class Product {
     constructor(name, quantity, price) {
@@ -14,7 +13,9 @@ class Product {
 
     cost() {
         const { price } = this;
-        return `$${Number(price).toFixed(2)}`;
+        let regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
+
+        return `$${Number(price.toFixed(2).replace(regex, ''))}`;
     }
 
     amount() {
