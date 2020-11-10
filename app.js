@@ -13,9 +13,7 @@ class Product {
 
     cost() {
         const { price } = this;
-        let regex = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
-
-        return `$${Number(price.toFixed(2).replace(regex, ''))}`;
+        return `$${Number(price).toFixed(2)}`;
     }
 
     amount() {
@@ -27,7 +25,7 @@ class Product {
         return `
         <div class="container">
             <div class="row">
-                <div class="list-desc col-sm"><span class="p-3 mb-2 bg-dark text-white">Item ID # ${randomNumber}</span>${this.productName()}</div>
+                <div class="list-desc col-sm"><span class="p-3 mb-2 bg-dark text-white">ID#: ${randomNumber}</span>${this.productName()}</div>
                 <div class="list-desc col-sm"><span class="p-3 mb-2 bg-primary text-white">Quantity</span>${this.amount()}</div>
                 <div class="list-desc col-sm"><span class="p-3 mb-2 bg-danger text-white">Price</span>${this.cost()}</div>
             </div>
