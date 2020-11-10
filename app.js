@@ -1,3 +1,5 @@
+const reg = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+
 class Product {
     constructor(name, quantity, price) {
         this.name = name;
