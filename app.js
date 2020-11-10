@@ -42,6 +42,8 @@ const product = document.querySelector('#product-name');
 const quantity = document.querySelector('#quantity-of-items');
 // price: item-price
 const price = document.querySelector('#item-price');
+// all three inputs
+const allInputs = [product, quantity, price];
 
 // total: display-total
 const total = document.querySelector('#display-total');
@@ -58,8 +60,6 @@ function enterProduct() {
     let productValue = product.value;
     let quantityValue = Number(quantity.value);
     let priceValue = Number(price.value);
-
-    const allInputs = [product, quantity, price];
 
     // if price or quantity are not numbers
     if (isNaN(quantityValue) || isNaN(priceValue)) {
