@@ -57,7 +57,7 @@ enterItemButton.addEventListener('click', () => {
 });
 
 for (let input of allInputs) {
-    input.addEventListener('keypress', (e) => {
+    input.addEventListener('keyup', (e) => {
         if (e.keyCode === 13) {
             enterProduct();
         }
