@@ -55,7 +55,7 @@ let accumalator = [];
 enterItemButton.addEventListener('click', () => {
     enterProduct();
 });
-
+// enter item on enter
 for (let input of allInputs) {
     input.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
