@@ -59,6 +59,8 @@ function enterProduct() {
     let quantityValue = Number(quantity.value);
     let priceValue = Number(price.value);
 
+    const allInputs = [product, quantity, price];
+
     // if price or quantity are not numbers
     if (isNaN(quantityValue) || isNaN(priceValue)) {
         alert('Only numerical values please!');
@@ -69,9 +71,10 @@ function enterProduct() {
     }
     // if everything is good
     else if (product.value && quantity.value && price.value) {
-        product.classList.remove('reddened');
-        quantity.classList.remove('reddened');
-        price.classList.remove('reddened');
+        // remove red borders
+        for (input of allInputs) {
+            input.classList.remove('reddened');
+        }
         // push into accumalator
         // * Math.round((Number(quantity.value)))
         for (let i = 0; i < Number(quantity.value); i++) {
@@ -89,9 +92,10 @@ function enterProduct() {
     }
     // if no input at all
     else {
-        product.classList.add('reddened');
-        quantity.classList.add('reddened');
-        price.classList.add('reddened');
+        // toggle red borders
+        for (input of allInputs) {
+            input.classList.add('reddened');
+        }
     }
 
     let totalPrice = accumalator.reduce((acc, val) => acc + val);
