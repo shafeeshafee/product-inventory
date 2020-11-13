@@ -32,20 +32,13 @@ class Product {
     }
 }
 
-// list div: list-parent
 const list = document.querySelector('.list-parent');
-// button: add-item
 const enterItemButton = document.querySelector('#add-item');
-// product: product-name
 const product = document.querySelector('#product-name');
-// quantity: quantity-of-items
 const quantity = document.querySelector('#quantity-of-items');
-// price: item-price
 const price = document.querySelector('#item-price');
-// all three inputs
 const allInputs = [product, quantity, price];
 
-// total: display-total
 const total = document.querySelector('#display-total');
 
 // item accumalator
@@ -69,7 +62,7 @@ function enterProduct() {
     let quantityValue = Number(quantity.value);
     let priceValue = Number(price.value);
 
-    // if price or quantity are not numbers
+
     if (isNaN(quantityValue) || isNaN(priceValue)) {
         alert('Only numerical values please!');
         quantity.value = '', price.value = '';
@@ -77,29 +70,29 @@ function enterProduct() {
         price.classList.add('reddened');
         return;
     }
-    // if everything is good
+
     else if (product.value && quantity.value && price.value) {
-        // remove red borders
+
         for (let input of allInputs) {
             input.classList.remove('reddened');
         }
-        // push into accumalator
+
         for (let i = 0; i < Number(quantity.value); i++) {
             accumalator.push(Number(price.value));
         }
-        // new product
+
         let newProduct = new Product(productValue, quantityValue, priceValue);
-        // create a li node
+
         let newLi = document.createElement('li');
         newLi.classList.add('list-group-item');
         newLi.innerHTML = newProduct.addItem();
-        //append it
+
         list.append(newLi);
         product.value = '', quantity.value = '', price.value = '';
     }
-    // if no input at all
+
     else {
-        // toggle red borders
+
         for (let input of allInputs) {
             input.classList.add('reddened');
         }
@@ -107,7 +100,7 @@ function enterProduct() {
 
     let totalPrice = accumalator.reduce((acc, val) => acc + val);
 
-    // display sum of all items
+
     if (accumalator !== []) {
         total.innerText = `$${totalPrice.toFixed(2)}`;
     } else {
